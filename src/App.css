@@ -1,0 +1,96 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 40vmin;
+  pointer-events: none;
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+.Margin-bottom-8px {
+  margin-bottom:8px !important;
+}
+
+.ChartContainer {
+  position: relative !important;
+  height:40vh !important;
+}
+
+.custom-flex-center {
+  display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+input:focus {
+  outline:none;
+}
+
+button {
+  padding: 0;
+  margin: 0;
+  outline: 0;
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+@-webkit-keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+._loading_overlay_content {
+  border: 6px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 6px solid #089bab;
+  width: 40px;
+  height: 40px;
+  -webkit-animation: spin 2s linear infinite; /* Safari */
+  animation: spin 2s linear infinite;
+}
+._loading_overlay_overlay {
+  /* filter:drop-shadow(1px 5px 4px black); */
+  position: fixed !important;
+  height: 100% !important;
+  width: 100% !important;
+  background: rgba(255,255,255,0.2) !important;
+  z-index: 9998 !important;
+}
