@@ -8,14 +8,14 @@ const styles = theme => ({
   });
 
 
-class BottomBar extends React.Component{
+class OrderManagement extends React.Component{
       
         render(){
          
             return(
             <Grid container >
             <Grid item xs={12}>
-            BottomBar
+            OrderManagement
             </Grid>
           
                
@@ -29,4 +29,4 @@ const mapStateToProps = ({ screenConfiguration }) => {
     
     return {...preparedFinalObject};
   };
-export default connect(mapStateToProps, mapDispatchToProps)(withStyles(styles)(BottomBar));
+export default connect(mapStateToProps, mapDispatchToProps)(withStyles(styles)(OrderManagement));

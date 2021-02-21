@@ -8,8 +8,8 @@ const Login = Loadable({
   loading: Loading
 });
 
-const BottomBar = Loadable({
-  loader: () => import("../ui-pages/UserHome/components/Content/BottomBar"),
+const OrderManagement = Loadable({
+  loader: () => import("../ui-pages/UserHome/components/Content/OrderManagement"),
   loading: Loading
 });
 
@@ -19,7 +19,7 @@ const MainRoutes = () => {
   return (
     <div>
       <Route exact path="/" component={Login} />     {/*Login component should be changed back to Dashboard*/}
-      <Route path="/user-home" component={BottomBar} />
+      <Route path="/user-home" component={OrderManagement} />
     </div>
   )
 }
