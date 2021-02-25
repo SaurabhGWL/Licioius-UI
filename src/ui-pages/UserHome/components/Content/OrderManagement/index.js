@@ -1,7 +1,10 @@
 import React from "react";
-import { Grid, withStyles, Button, NativeSelect }  from '@material-ui/core';
+import { Grid, withStyles, Button, NativeSelect, GridListTile  }  from '@material-ui/core';
 import { connect } from "react-redux";
 import { mapDispatchToProps } from '../../../../../ui-utils/commons';
+import Divider from '@material-ui/core/Divider';
+import { ExpandMore, AccountCircleOutlined, Edit } from '@material-ui/icons';
+
 
 const styles = theme => ({
   container: {
@@ -147,7 +150,13 @@ const styles = theme => ({
   },
   smallBox:{
     float:'left',
-    margin: '0 2px'
+    margin: '5px 12px',
+    width:'100px'
+  },
+  profileEdit: {
+    display:'inline-block',
+    margin: '5px 12px',
+    width:'70px'
   }
 });
 // eslint-disable-next-line
@@ -194,52 +203,71 @@ class OrderManagement extends React.Component{
                             <Grid container>
                             <Grid item xs={12}>
                             <Grid item xs={2} className={classes.smallBox}>                     
-                        <div   style={{ background: '#f0f0f0',  textAlign: 'center', padding: '5px' }}>
-                           Hub1                        </div>
+                        <div className={classes.smallBox} style={{ background: '#f0f0f0',  textAlign: 'center', padding: '5px' }}>
+                           Hub1</div>
                            </Grid>  
                            <Grid item xs={2} className={classes.smallBox}>                     
                         <div className={classes.smallBox} style={{ background: '#f0f0f0',  textAlign: 'center', padding: '5px' }}>
-                           Hub2                       </div>
+                           Hub2</div>
                            </Grid> 
                            <Grid item xs={2} className={classes.smallBox}>                     
                         <div className={classes.smallBox} style={{ background: '#f0f0f0',  textAlign: 'center', padding: '5px' }}>
-                           Hub3                      </div>
+                           Hub3 </div>
                            </Grid> 
                            <Grid item xs={2} className={classes.smallBox}>                     
                         <div className={classes.smallBox} style={{ background: '#f0f0f0',  textAlign: 'center', padding: '5px' }}>
-                           Hub4                       </div>
+                           Hub4</div>
                            </Grid> 
                            <Grid item xs={2} className={classes.smallBox}>                     
                         <div className={classes.smallBox} style={{ background: '#f0f0f0',  textAlign: 'center', padding: '5px' }}>
-                           Hub5                       </div>
+                           Hub5</div>
                            </Grid> 
                            <Grid item xs={2} className={classes.smallBox}>                     
                         <div className={classes.smallBox} style={{ background: '#f0f0f0',  textAlign: 'center', padding: '5px' }}>
-                           Hub6                       </div>
+                           Hub6</div>
                            </Grid> 
                            <Grid item xs={2} className={classes.smallBox}>                     
                         <div className={classes.smallBox} style={{ background: '#f0f0f0',  textAlign: 'center', padding: '5px' }}>
-                           Hub7                      </div>
+                           Hub7</div>
                            </Grid> 
                            <Grid item xs={2} className={classes.smallBox}>                     
                         <div className={classes.smallBox} style={{ background: '#f0f0f0',  textAlign: 'center', padding: '5px' }}>
-                           Hub8                     </div>
+                           Hub8</div>
                            </Grid> 
                            <Grid item xs={2} className={classes.smallBox}>                     
                         <div className={classes.smallBox} style={{ background: '#f0f0f0',  textAlign: 'center', padding: '5px' }}>
-                           Hub9                      </div>
+                           Hub9</div>
                            </Grid> 
                            
                           </Grid>
+                          <Grid item xs={12}>
+                            <div style={{textAlign: 'center', padding: '5px' }}> <ExpandMore/>View More</div>
+                            <Divider variant="middle" />
+                            </Grid>
+                            <Grid item xs={12}>
+                              <Grid item xs={10} style={{float: 'left',textAlign: 'center', padding: '5px', display: 'table', margin:'0 auto', width:'100%' }}>
+                              <div className={classes.profileEdit} >
+                                  <div><AccountCircleOutlined fontSize="large"/></div>
+                                  Home
+                              </div>
+                              <div className={classes.profileEdit}>
+                                <div><AccountCircleOutlined fontSize="large" /></div>
+                                Profile
+                              </div>
+                              <div className={classes.profileEdit}>
+                                <div><AccountCircleOutlined fontSize="large" /></div>
+                                Reward
+                              </div>
+                              <div className={classes.profileEdit}>
+                              <div><AccountCircleOutlined fontSize="large" /></div>
+                              Refer
+                              </div>
+                              </Grid>
+                              <Grid item xs={2} style={{float: 'right',textAlign: 'right'}}><span>Edit <Edit/></span></Grid>
+                            </Grid>
                     </Grid>
-                    
-
-                          </div>
-
+                  </div>
                       </Grid>
-
-                    
-                 
               </Grid>
 
               <Grid item style={{ display: 'none' }}>
