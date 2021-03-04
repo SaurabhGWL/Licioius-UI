@@ -1,9 +1,10 @@
-import React from "react";
-import { Grid, withStyles, Button, NativeSelect, GridListTile  }  from '@material-ui/core';
+import React,{ Component } from "react";
+import { Grid, withStyles, Button, NativeSelect}  from '@material-ui/core';
 import { connect } from "react-redux";
 import { mapDispatchToProps } from '../../../../../ui-utils/commons';
 import Divider from '@material-ui/core/Divider';
 import { ExpandMore, AccountCircleOutlined, Edit } from '@material-ui/icons';
+import PopUp from './AddBarPopup';
 
 
 const styles = theme => ({
@@ -162,19 +163,23 @@ const styles = theme => ({
 // eslint-disable-next-line
 let regex = /<br\s*[\/]?>/gi;
 
-const flaggingMapped  = {
-  "redflag": "flag-red.svg",
-  "blueflag": "flag-blue.svg",
-  "orangeflag": "flag-orange.svg",
-  "yellowflag": "flag-yellow.svg",
-  "pinkflag": "flag-pink.svg",
-  "greenflag": "flag-green.svg",
-  "grayflag": "flag-gray.svg"       
-}
-class OrderManagement extends React.Component{
+class OrderManagement extends Component {
+
+  state = {
+    isOpen: false
+    };
+
+    togglePopup = () => {
+      console.log(78099);
+    this.setState({
+     isOpen: !this.state.isOpen
+    });
+   };
+
         render(){
-          const { classes, history, notificationArray, patient_groups = {}, setAppData, communication, dateTimeFormat, flaggingSystem } = this.props;
+          const { classes } = this.props;
           return(
+            
             <Grid container className={classes.container}>
                
               <Grid item xs={12} className={classes.header}>
@@ -182,7 +187,7 @@ class OrderManagement extends React.Component{
               </Grid>
               <Grid container>
               <Grid item xs={12} className={classes.subheader} style={{ textAlign: 'right' }} >
-              <Button variant="outlined">Add</Button>
+              <Button variant="outlined" onClick={this.togglePopup}>Add Bar</Button>
               </Grid>
               </Grid>
               <Grid container>
@@ -269,8 +274,8 @@ class OrderManagement extends React.Component{
                   </div>
                       </Grid>
               </Grid>
-
-              <Grid item style={{ display: 'none' }}>
+          {this.state.isOpen ? <PopUp toggle={this.togglePopup} /> : null}        
+              <Grid item style={{ display: 'none' }}> 
               </Grid>
           </Grid>
            
